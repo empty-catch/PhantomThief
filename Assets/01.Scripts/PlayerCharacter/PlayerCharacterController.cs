@@ -9,6 +9,8 @@ public class PlayerCharacterController : MonoBehaviour
     private float defaultSpeed;
     private float speed;
 
+    private Ray mouseRay;
+
     private void Awake(){
         speed = defaultSpeed;
     }
@@ -30,6 +32,10 @@ public class PlayerCharacterController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E)){
                 Cancel();
             }
+
+            if(Input.GetMouseButtonDown(0)){
+                Interaction();
+            }
         }
     }
     
@@ -37,7 +43,19 @@ public class PlayerCharacterController : MonoBehaviour
         gameObject.transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    private void Interaction() { }
+    private InteractionObject Interaction() { 
+        mouseRay.direction = Vector3.forward;
+        mouseRay.origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(mouseRay.origin, mouseRay.direction, out hit, Mathf.Infinity, LayerMask.GetMask("InterfactionObject"))){
+            return hit.collider.gameObject.GetComponent<InteractionObject>();
+        }
+
+        return null;
+    }
+
     private void Apply() { }
     private void Cancel() { }
 }
