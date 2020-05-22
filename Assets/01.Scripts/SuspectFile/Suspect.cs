@@ -11,7 +11,7 @@ public class Suspect : ScriptableObject
     [SerializeField]
     private string description;
 
-    [Header("Proviso")]
+    [Header("Clue")]
     [SerializeField]
     private string where;
     [SerializeField]

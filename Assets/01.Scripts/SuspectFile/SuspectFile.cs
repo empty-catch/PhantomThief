@@ -1,12 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SuspectFile : MonoBehaviour
 {
+    [Header("Suspects")]
     [SerializeField]
-    private Suspect[] suspects;
+    private Suspect[] suspects = new Suspect[4];
     [SerializeField]
-    private RectTransform[] suspectsUI;
+    private RectTransform[] suspectsUI = new RectTransform[4];
+    [SerializeField]
+    private Image selectEffect;
+
+    private List<ClueCard>[] clueCardLists = new List<ClueCard>[4];
+    private int selectedSuspectIndex;
+
+    public void SelectSuspect(int index)
+    {
+        selectedSuspectIndex = index;
+        selectEffect.rectTransform.pivot = suspectsUI[index].pivot;
+        selectEffect.rectTransform.anchorMin = suspectsUI[index].anchorMin;
+        selectEffect.rectTransform.anchorMax = suspectsUI[index].anchorMax;
+        selectEffect.rectTransform.anchoredPosition = suspectsUI[index].anchoredPosition;
+    }
 
     private void Awake()
     {
@@ -20,5 +37,12 @@ public class SuspectFile : MonoBehaviour
             name.text = suspects[i].Name;
             description.text = suspects[i].Description;
         }
+
+        for (int i = 0; i < clueCardLists.Length; i++)
+        {
+            clueCardLists[i] = new List<ClueCard>();
+        }
+
+        SelectSuspect(selectedSuspectIndex);
     }
 }
