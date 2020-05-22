@@ -1,28 +1,46 @@
-using System.Collections.Generic;
+#pragma warning disable CS0649
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class SuspectFile : MonoBehaviour
 {
     [Header("Suspects")]
     [SerializeField]
+    private Image selectEffect;
+    [SerializeField]
     private Suspect[] suspects = new Suspect[4];
     [SerializeField]
     private RectTransform[] suspectsUI = new RectTransform[4];
-    [SerializeField]
-    private Image selectEffect;
 
-    private List<ClueCard>[] clueCardLists = new List<ClueCard>[4];
-    private int selectedSuspectIndex;
+    [Header("Clue Matching")]
+    [SerializeField]
+    private Text matchingSuspect;
+    [SerializeField]
+    private ClueCard clueCardPrefab;
+    [SerializeField]
+    private RectTransform[] clueCards = new RectTransform[4];
+    [SerializeField]
+    private RectTransform[] clueCardPlaces;
+
+    private int selectedSuspectIndex = 0;
 
     public void SelectSuspect(int index)
     {
-        selectedSuspectIndex = index;
         selectEffect.rectTransform.pivot = suspectsUI[index].pivot;
         selectEffect.rectTransform.anchorMin = suspectsUI[index].anchorMin;
         selectEffect.rectTransform.anchorMax = suspectsUI[index].anchorMax;
         selectEffect.rectTransform.anchoredPosition = suspectsUI[index].anchoredPosition;
+
+        clueCards[selectedSuspectIndex].gameObject.SetActive(false);
+        clueCards[index].gameObject.SetActive(true);
+        selectedSuspectIndex = index;
+    }
+
+    public void AddClueCard(string clue, int suspectIndex)
+    {
+        var clueCard = Instantiate(clueCardPrefab, clueCards[suspectIndex]);
+        clueCard.Initialize(clue, clueCards[suspectIndex].anchoredPosition);
     }
 
     private void Awake()
@@ -38,11 +56,10 @@ public class SuspectFile : MonoBehaviour
             description.text = suspects[i].Description;
         }
 
-        for (int i = 0; i < clueCardLists.Length; i++)
-        {
-            clueCardLists[i] = new List<ClueCard>();
-        }
-
         SelectSuspect(selectedSuspectIndex);
+        AddClueCard("상설전시관", 0);
+        AddClueCard("주인공을", 0);
+        AddClueCard("그냥", 0);
+        AddClueCard("밀었다", 0);
     }
 }

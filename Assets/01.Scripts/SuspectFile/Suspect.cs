@@ -1,3 +1,4 @@
+#pragma warning disable CS0649
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Suspect", menuName = "Suspect")]
@@ -24,4 +25,8 @@ public class Suspect : ScriptableObject
     public Sprite Picture => picture;
     public string Name => name;
     public string Description => description;
+    public string Where => where;
+    public string What => what;
+    public string How => how;
+    public string Why => why;
 }
