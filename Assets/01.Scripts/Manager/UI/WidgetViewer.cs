@@ -1,0 +1,61 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+
+public class WidgetViewer : MonoBehaviour
+{
+    [SerializeField]
+    private TextViewUI monolougeObject;
+    
+    [SerializeField]
+    private TextViewUI systemTextObject;
+
+    private TextViewUI selectTextUI;
+    private string[] textValues;
+    private int index;
+
+    public Action endEvent {get; set;}
+
+    private bool isOpen = false;
+
+    public void ShowMonologue(params string[] texts){
+        selectTextUI = monolougeObject;
+        textValues = texts;
+
+        OpenSetting();
+    }
+
+    public void ShowSystemText(params string[] texts){
+        selectTextUI = systemTextObject;
+        textValues = texts;
+
+        OpenSetting();
+    }
+
+    private void OpenSetting(){
+        selectTextUI.gameObject.SetActive(true);
+        selectTextUI.ShowTexts(textValues[index++]);
+        isOpen = true;
+    }
+
+
+    public void NextText(){
+        if(!isOpen)
+            return;
+                
+        if(index.Equals(textValues.Length)){
+            CloseUIText();
+        }
+
+        selectTextUI.ShowTexts(textValues[index++]);
+    }
+
+    private void CloseUIText(){
+        selectTextUI.gameObject.SetActive(false);
+        isOpen = false;
+        index = 0;
+        endEvent();
+    }
+}
