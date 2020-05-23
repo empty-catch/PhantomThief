@@ -1,0 +1,279 @@
+
+스프라이트4.png
+size: 505,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+s대가리
+  rotate: false
+  xy: 78, 300
+  size: 131, 177
+  orig: 133, 179
+  offset: 1, 1
+  index: -1
+s리본
+  rotate: false
+  xy: 422, 462
+  size: 40, 53
+  orig: 42, 55
+  offset: 1, 1
+  index: -1
+s목
+  rotate: false
+  xy: 452, 123
+  size: 49, 42
+  orig: 71, 87
+  offset: 11, 39
+  index: -1
+s상의
+  rotate: true
+  xy: 78, 6
+  size: 105, 124
+  orig: 107, 126
+  offset: 1, 1
+  index: -1
+s손
+  rotate: false
+  xy: 464, 505
+  size: 38, 42
+  orig: 40, 44
+  offset: 1, 1
+  index: -1
+s앞머리
+  rotate: true
+  xy: 372, 114
+  size: 80, 78
+  orig: 82, 80
+  offset: 1, 1
+  index: -1
+s앞머리 복사
+  rotate: false
+  xy: 2, 2
+  size: 74, 131
+  orig: 74, 131
+  offset: 0, 0
+  index: -1
+s오른다리
+  rotate: false
+  xy: 363, 517
+  size: 88, 203
+  orig: 89, 203
+  offset: 0, 0
+  index: -1
+s왼다리
+  rotate: false
+  xy: 363, 517
+  size: 88, 203
+  orig: 89, 203
+  offset: 0, 0
+  index: -1
+s오른손
+  rotate: false
+  xy: 464, 461
+  size: 38, 42
+  orig: 40, 44
+  offset: 1, 1
+  index: -1
+s오른손목
+  rotate: false
+  xy: 2, 135
+  size: 74, 210
+  orig: 76, 212
+  offset: 1, 1
+  index: -1
+s오른팔목
+  rotate: false
+  xy: 453, 636
+  size: 50, 110
+  orig: 52, 112
+  offset: 1, 1
+  index: -1
+s왼팔뚝
+  rotate: false
+  xy: 453, 636
+  size: 50, 110
+  orig: 52, 112
+  offset: 1, 1
+  index: -1
+s왼팔목
+  rotate: false
+  xy: 186, 132
+  size: 74, 166
+  orig: 76, 168
+  offset: 1, 1
+  index: -1
+s치마
+  rotate: false
+  xy: 2, 703
+  size: 184, 327
+  orig: 184, 334
+  offset: 0, 7
+  index: -1
+s카라
+  rotate: false
+  xy: 279, 8
+  size: 92, 67
+  orig: 94, 69
+  offset: 1, 1
+  index: -1
+s케이프
+  rotate: true
+  xy: 361, 336
+  size: 96, 82
+  orig: 98, 84
+  offset: 1, 1
+  index: -1
+감눈
+  rotate: false
+  xy: 373, 11
+  size: 52, 20
+  orig: 52, 20
+  offset: 0, 0
+  index: -1
+뒷머
+  rotate: false
+  xy: 454, 63
+  size: 46, 58
+  orig: 48, 60
+  offset: 1, 1
+  index: -1
+뜬눈
+  rotate: false
+  xy: 386, 725
+  size: 54, 21
+  orig: 54, 21
+  offset: 0, 0
+  index: -1
+리본
+  rotate: false
+  xy: 452, 167
+  size: 51, 56
+  orig: 51, 56
+  offset: 0, 0
+  index: -1
+머리통수 복사
+  rotate: false
+  xy: 217, 517
+  size: 144, 203
+  orig: 146, 205
+  offset: 1, 1
+  index: -1
+목
+  rotate: true
+  xy: 454, 18
+  size: 43, 47
+  orig: 45, 49
+  offset: 1, 1
+  index: -1
+상의
+  rotate: true
+  xy: 211, 325
+  size: 107, 148
+  orig: 109, 150
+  offset: 1, 1
+  index: -1
+앞머리
+  rotate: false
+  xy: 373, 33
+  size: 79, 79
+  orig: 110, 91
+  offset: 0, 10
+  index: -1
+옆머리 뒷
+  rotate: false
+  xy: 453, 549
+  size: 35, 85
+  orig: 104, 85
+  offset: 0, 0
+  index: -1
+오른다리
+  rotate: true
+  xy: 217, 434
+  size: 81, 203
+  orig: 83, 205
+  offset: 1, 1
+  index: -1
+오른손
+  rotate: false
+  xy: 78, 479
+  size: 137, 222
+  orig: 139, 224
+  offset: 1, 1
+  index: -1
+오른손목
+  rotate: false
+  xy: 204, 12
+  size: 73, 118
+  orig: 136, 196
+  offset: 0, 0
+  index: -1
+오른팔목
+  rotate: false
+  xy: 428, 225
+  size: 75, 109
+  orig: 77, 111
+  offset: 1, 1
+  index: -1
+왼다리
+  rotate: false
+  xy: 2, 347
+  size: 74, 354
+  orig: 76, 356
+  offset: 1, 1
+  index: -1
+왼손
+  rotate: false
+  xy: 445, 418
+  size: 37, 41
+  orig: 39, 43
+  offset: 1, 1
+  index: -1
+왼손목
+  rotate: true
+  xy: 386, 748
+  size: 78, 117
+  orig: 80, 119
+  offset: 1, 1
+  index: -1
+왼옆머리
+  rotate: false
+  xy: 364, 196
+  size: 62, 138
+  orig: 65, 147
+  offset: 0, 0
+  index: -1
+왼팔목
+  rotate: false
+  xy: 386, 828
+  size: 98, 202
+  orig: 100, 204
+  offset: 1, 1
+  index: -1
+치마 뒷단
+  rotate: true
+  xy: 78, 113
+  size: 185, 106
+  orig: 187, 108
+  offset: 1, 1
+  index: -1
+치마 상의
+  rotate: false
+  xy: 188, 722
+  size: 196, 308
+  orig: 198, 310
+  offset: 1, 1
+  index: -1
+카라
+  rotate: false
+  xy: 262, 174
+  size: 100, 149
+  orig: 102, 151
+  offset: 1, 1
+  index: -1
+케이프
+  rotate: false
+  xy: 279, 77
+  size: 91, 95
+  orig: 133, 151
+  offset: 42, 28
+  index: -1
