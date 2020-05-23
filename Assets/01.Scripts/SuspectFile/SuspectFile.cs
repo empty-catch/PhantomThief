@@ -15,6 +15,8 @@ public class SuspectFile : MonoBehaviour
 
     [Header("Clue Matching")]
     [SerializeField]
+    private ClueMatching clueMatching;
+    [SerializeField]
     private Text matchingSuspect;
     [SerializeField]
     private ClueCard clueCardPrefab;
@@ -41,7 +43,7 @@ public class SuspectFile : MonoBehaviour
     {
         var clueCard = Instantiate(clueCardPrefab, clueCards[suspectIndex]);
         var position = new Vector2(Random.Range(-160F, 160F), Random.Range(-125F, 125F));
-        clueCard.Initialize(clue, position);
+        clueCard.Initialize(suspectIndex, clue, position, clueMatching.Match);
     }
 
     private void Awake()
@@ -59,8 +61,8 @@ public class SuspectFile : MonoBehaviour
 
         SelectSuspect(selectedSuspectIndex);
         AddClueCard("상설전시관", 0);
-        AddClueCard("주인공을", 0);
-        AddClueCard("그냥", 0);
-        AddClueCard("밀었다", 0);
+        AddClueCard("용의자 D를", 0);
+        AddClueCard("싫어서", 0);
+        AddClueCard("때렸다", 0);
     }
 }

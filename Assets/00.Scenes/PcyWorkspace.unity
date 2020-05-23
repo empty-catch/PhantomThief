@@ -1718,6 +1718,7 @@ MonoBehaviour:
   - {fileID: 1517373467}
   - {fileID: 1084104711}
   - {fileID: 645700146}
+  clueMatching: {fileID: 941967720}
   matchingSuspect: {fileID: 264072359}
   clueCardPrefab: {fileID: 2424089233265120966, guid: e80592581dd17c749954e81c1d03ae94,
     type: 3}
@@ -2125,6 +2126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 941967719}
+  - component: {fileID: 941967720}
   m_Layer: 5
   m_Name: Clue Matching
   m_TagString: Untagged
@@ -2157,6 +2159,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 800}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &941967720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941967718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2e5d3b4b685242a9c428de3c69d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suspects:
+  - {fileID: 11400000, guid: 9b9ed4eef3e03df4799436a92810e7ea, type: 2}
+  - {fileID: 11400000, guid: f9eac379ad35e984395ec7d7405df390, type: 2}
+  - {fileID: 11400000, guid: 9dc5b9e6f06da6142bf57c66c6b1242c, type: 2}
+  - {fileID: 11400000, guid: 082b8196e91ae1e4a8e383a0f8ed947b, type: 2}
+  matched:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
