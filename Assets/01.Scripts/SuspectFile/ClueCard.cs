@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
+[RequireComponent(typeof(Image))]
 public class ClueCard : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,7 @@ public class ClueCard : MonoBehaviour
     private Vector2 difference;
     private IEnumerator followCursor;
     private Tweener tweener;
+    private Image image;
 
     public void Initialize(string clue, Vector2 position)
     {
@@ -28,7 +30,7 @@ public class ClueCard : MonoBehaviour
 
     public void Select()
     {
-        tweener?.Kill();
+        image.raycastTarget = false;
         difference = transform.position - Input.mousePosition;
         followCursor.Start(this);
     }
@@ -36,13 +38,25 @@ public class ClueCard : MonoBehaviour
     public void Deselect()
     {
         followCursor.Stop(this);
-        tweener = rectTransform.DOAnchorPos(position, 0.2F);
+        tweener?.Kill();
+
+        if (ClueCardPlace.IsMouseOver)
+        {
+            position = rectTransform.anchoredPosition;
+        }
+        else
+        {
+            tweener = rectTransform.DOAnchorPos(position, 0.2F);
+        }
+
+        image.raycastTarget = true;
     }
 
     private void Awake()
     {
         followCursor = FollowCursor();
         rectTransform = transform as RectTransform;
+        image = GetComponent<Image>();
     }
 
     private void ResizeImage()

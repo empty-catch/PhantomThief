@@ -40,7 +40,8 @@ public class SuspectFile : MonoBehaviour
     public void AddClueCard(string clue, int suspectIndex)
     {
         var clueCard = Instantiate(clueCardPrefab, clueCards[suspectIndex]);
-        clueCard.Initialize(clue, clueCards[suspectIndex].anchoredPosition);
+        var position = new Vector2(Random.Range(-160F, 160F), Random.Range(-125F, 125F));
+        clueCard.Initialize(clue, position);
     }
 
     private void Awake()
