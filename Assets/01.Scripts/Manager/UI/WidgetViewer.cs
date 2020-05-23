@@ -14,7 +14,7 @@ public class WidgetViewer : MonoBehaviour
 
     private TextViewUI selectTextUI;
     private string[] textValues;
-    private int index;
+    private int index = 0;
 
     public Action endEvent {get; set;}
 
@@ -44,12 +44,16 @@ public class WidgetViewer : MonoBehaviour
     public void NextText(){
         if(!isOpen)
             return;
-                
+
+
         if(index.Equals(textValues.Length)){
             CloseUIText();
+            return ;
         }
 
         selectTextUI.ShowTexts(textValues[index++]);
+
+
     }
 
     private void CloseUIText(){
