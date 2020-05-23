@@ -1,48 +1,68 @@
+#pragma warning disable CS0649
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ClueMatching : MonoBehaviour
 {
     [SerializeField]
-    private Suspect[] suspects = new Suspect[4];
-    [SerializeField]
     private IntEvent matched;
-    private Clue[] clues = new Clue[4];
+    private Clue[] clues = new Clue[4] { new Clue(), new Clue(), new Clue(), new Clue() };
 
-    public void Match(int suspectIndex, string type, string clue)
+    public void Match(int suspectIndex, string placeName, string clue, Suspect suspect)
     {
-        switch (type)
+        switch (placeName)
         {
             case "Where":
-                clues[suspectIndex].where = clue;
+                clues[suspectIndex].Where.Add(clue);
                 break;
             case "What":
-                clues[suspectIndex].what = clue;
+                clues[suspectIndex].What.Add(clue);
                 break;
             case "How":
-                clues[suspectIndex].how = clue;
+                clues[suspectIndex].How.Add(clue);
                 break;
             case "Why":
-                clues[suspectIndex].why = clue;
+                clues[suspectIndex].Why.Add(clue);
                 break;
         }
 
-        var isMatching = suspects[suspectIndex].Where == clues[suspectIndex].where &&
-            suspects[suspectIndex].What == clues[suspectIndex].what &&
-            suspects[suspectIndex].How == clues[suspectIndex].how &&
-            suspects[suspectIndex].Why == clues[suspectIndex].why;
-
-        if (isMatching)
+        if (clues[suspectIndex].IsMatching(suspect))
         {
             Debug.Log($"Matched {suspectIndex}th Suspect");
             matched?.Invoke(suspectIndex);
         }
     }
 
-    private struct Clue
+    public void CancelMatch(int suspectIndex, string placeName, string clue)
     {
-        public string where;
-        public string what;
-        public string how;
-        public string why;
+        switch (placeName)
+        {
+            case "Where":
+                clues[suspectIndex].Where.Remove(clue);
+                break;
+            case "What":
+                clues[suspectIndex].What.Remove(clue);
+                break;
+            case "How":
+                clues[suspectIndex].How.Remove(clue);
+                break;
+            case "Why":
+                clues[suspectIndex].Why.Remove(clue);
+                break;
+        }
+    }
+
+    private class Clue
+    {
+        public HashSet<string> Where { get; } = new HashSet<string>();
+        public HashSet<string> What { get; } = new HashSet<string>();
+        public HashSet<string> How { get; } = new HashSet<string>();
+        public HashSet<string> Why { get; } = new HashSet<string>();
+
+        public bool IsMatching(Suspect suspect)
+        {
+            var hasOne = Where.Count == 1 && What.Count == 1 && How.Count == 1 && Why.Count == 1;
+            return hasOne && Where.Contains(suspect.Where) && What.Contains(suspect.What) && How.Contains(suspect.How) && Why.Contains(suspect.Why);
+        }
     }
 }

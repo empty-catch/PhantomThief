@@ -43,7 +43,9 @@ public class SuspectFile : MonoBehaviour
     {
         var clueCard = Instantiate(clueCardPrefab, clueCards[suspectIndex]);
         var position = new Vector2(Random.Range(-160F, 160F), Random.Range(-125F, 125F));
-        clueCard.Initialize(suspectIndex, clue, position, clueMatching.Match);
+        System.Action<string> match = placeName => clueMatching.Match(suspectIndex, placeName, clue, suspects[suspectIndex]);
+        System.Action<string> cancelMatch = placeName => clueMatching.CancelMatch(suspectIndex, placeName, clue);
+        clueCard.Initialize(clue, position, match, cancelMatch);
     }
 
     private void Awake()

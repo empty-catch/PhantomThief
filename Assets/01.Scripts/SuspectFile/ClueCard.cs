@@ -13,21 +13,22 @@ public class ClueCard : MonoBehaviour
     private Image image;
     private RectTransform rectTransform;
 
-    private int suspectIndex;
     private string clue;
-    private Tweener tweener;
-    private Action<int, string, string> match;
+    private string placeName;
+    private Action<string> match;
+    private Action<string> cancelMatch;
 
     private Vector2 position;
     private Vector2 difference;
     private IEnumerator followCursor;
+    private Tweener tweener;
 
-    public void Initialize(int suspectIndex, string clue, Vector2 position, Action<int, string, string> match)
+    public void Initialize(string clue, Vector2 position, Action<string> match, Action<string> cancelMatch)
     {
-        this.suspectIndex = suspectIndex;
         this.clue = clue;
         this.position = position;
         this.match = match;
+        this.cancelMatch = cancelMatch;
 
         text.text = clue;
         ResizeImage();
@@ -49,7 +50,9 @@ public class ClueCard : MonoBehaviour
         if (ClueCardPlace.IsMouseOver)
         {
             position = rectTransform.anchoredPosition;
-            match?.Invoke(suspectIndex, ClueCardPlace.Type, clue);
+            cancelMatch?.Invoke(placeName);
+            match?.Invoke(ClueCardPlace.Name);
+            placeName = ClueCardPlace.Name;
         }
         else
         {
