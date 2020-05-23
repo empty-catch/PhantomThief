@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd504caf8611714a9a7eebad8e08bd3, type: 3}
+  m_Name: Suspect B
+  m_EditorClassIdentifier: 
+  name: "\uC6A9\uC758\uC790 B"
+  description: "\uC6A9\uC758\uC790 B\uC5D0 \uB300\uD55C \uC815\uBCF4"
+  where: "\uC218\uC7A5\uACE0"
+  what: "\uC8FC\uC778\uACF5\uC744"
+  how: "\uBC00\uC5C8\uB2E4"
+  why: "\uC9C8\uD22C\uC2EC\uC5D0"
