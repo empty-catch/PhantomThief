@@ -71,7 +71,7 @@ public class ClueCard : MonoBehaviour
 
     private void ResizeImage()
     {
-        rectTransform.sizeDelta = new Vector2(text.preferredWidth + 20F, text.preferredHeight + 20F);
+        rectTransform.sizeDelta = new Vector2(text.preferredWidth + 68F, text.preferredHeight + 34F);
     }
 
     private IEnumerator FollowCursor()

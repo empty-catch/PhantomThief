@@ -7,7 +7,7 @@ public class SuspectFile : MonoBehaviour
 {
     [Header("Suspects")]
     [SerializeField]
-    private Image selectEffect;
+    private RectTransform selectEffect;
     [SerializeField]
     private Suspect[] suspects = new Suspect[4];
     [SerializeField]
@@ -29,11 +29,7 @@ public class SuspectFile : MonoBehaviour
 
     public void SelectSuspect(int index)
     {
-        selectEffect.rectTransform.pivot = suspectsUI[index].pivot;
-        selectEffect.rectTransform.anchorMin = suspectsUI[index].anchorMin;
-        selectEffect.rectTransform.anchorMax = suspectsUI[index].anchorMax;
-        selectEffect.rectTransform.anchoredPosition = suspectsUI[index].anchoredPosition;
-
+        selectEffect.anchoredPosition = suspectsUI[index].anchoredPosition;
         clueCards[selectedSuspectIndex].gameObject.SetActive(false);
         clueCards[index].gameObject.SetActive(true);
         selectedSuspectIndex = index;
@@ -42,7 +38,7 @@ public class SuspectFile : MonoBehaviour
     public void AddClueCard(string clue, int suspectIndex)
     {
         var clueCard = Instantiate(clueCardPrefab, clueCards[suspectIndex]);
-        var position = new Vector2(Random.Range(-160F, 160F), Random.Range(-125F, 125F));
+        var position = new Vector2(Random.Range(-160F, 160F), Random.Range(-100F, 100F));
         System.Action<string> match = placeName => clueMatching.Match(suspectIndex, placeName, clue, suspects[suspectIndex]);
         System.Action<string> cancelMatch = placeName => clueMatching.CancelMatch(suspectIndex, placeName, clue);
         clueCard.Initialize(clue, position, match, cancelMatch);
@@ -62,9 +58,9 @@ public class SuspectFile : MonoBehaviour
         }
 
         SelectSuspect(selectedSuspectIndex);
-        AddClueCard("상설전시관", 0);
-        AddClueCard("용의자 D를", 0);
-        AddClueCard("싫어서", 0);
-        AddClueCard("때렸다", 0);
+        AddClueCard("어디서", 0);
+        AddClueCard("무엇을", 0);
+        AddClueCard("어떻게", 0);
+        AddClueCard("왜", 0);
     }
 }
