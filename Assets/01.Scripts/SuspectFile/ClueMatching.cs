@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClueMatching : MonoBehaviour
 {
     [SerializeField]
-    private IntEvent matched;
+    private VoidEvent matched;
     private Clue[] clues = new Clue[4] { new Clue(), new Clue(), new Clue(), new Clue() };
 
     public void Match(int suspectIndex, string placeName, string clue, Suspect suspect)
@@ -29,7 +29,7 @@ public class ClueMatching : MonoBehaviour
         if (clues[suspectIndex].IsMatching(suspect))
         {
             Debug.Log($"Matched {suspectIndex}th Suspect");
-            matched?.Invoke(suspectIndex);
+            matched?.Invoke();
         }
     }
 
