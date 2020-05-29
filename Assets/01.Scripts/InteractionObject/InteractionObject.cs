@@ -10,10 +10,12 @@ public class InteractionObject : MonoBehaviour
 
     private string[] monolougeTexts;
     private string[] systemTexts;
+    private string[] invenstigateTexts;
 
     private void Awake() {
         monolougeTexts = information.monolougeStrings;
         systemTexts = information.systemStrings;
+        invenstigateTexts = information.invenstigateStrings;    
     }
 
     public void Interaction() {
@@ -21,12 +23,16 @@ public class InteractionObject : MonoBehaviour
     }
 
     private IEnumerator InteractionCoroutine(){
+        if(invenstigateTexts.Length > 0){
+            yield return new WaitForTextEnd(0, invenstigateTexts);
+        }
+
         if(monolougeTexts.Length > 0){
-            yield return new WaitForTextEnd(0, monolougeTexts);
+            yield return new WaitForTextEnd(1, monolougeTexts);
         }
         
         if(systemTexts.Length > 0){
-            yield return new WaitForTextEnd(1, systemTexts);
+            yield return new WaitForTextEnd(2, systemTexts);
         }
     }
 }

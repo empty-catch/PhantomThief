@@ -11,17 +11,22 @@ public class WaitForTextEnd : CustomYieldInstruction
         }
     }
 
-    ///<summary> 
+    ///<summary>
     /// index 0 : monolouge
+    //
+    /// index 1 : monolouge
     ///
-    /// index 1 : system text 
+    /// index 2 : system text 
     ///</summary>
     public WaitForTextEnd(int index, params string[] textValues){
         InGameManager.instance.widgetViewer.endEvent = () => {isEnd = false;};
         if(index.Equals(0)){
-            InGameManager.instance.widgetViewer.ShowMonologue(textValues);
+            InGameManager.instance.widgetViewer.ShowInvenstigate(textValues);
         }
         else if(index.Equals(1)){
+            InGameManager.instance.widgetViewer.ShowMonologue(textValues);
+        }
+        else if(index.Equals(2)){
             InGameManager.instance.widgetViewer.ShowSystemText(textValues);
         }
     }

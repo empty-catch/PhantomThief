@@ -20,6 +20,7 @@ public class PlayerCharacterController : MonoBehaviour
     }
 
     private void Update(){
+
         if(Input.anyKey){
             if(Input.GetKey(KeyCode.A)){
                 Move(Vector2.left);

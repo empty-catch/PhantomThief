@@ -12,6 +12,9 @@ public class WidgetViewer : MonoBehaviour
     [SerializeField]
     private TextViewUI systemTextObject;
 
+    [SerializeField]
+    private TextViewUI invenstigateObject;
+
     private TextViewUI selectTextUI;
     private string[] textValues;
     private int index = 0;
@@ -19,6 +22,13 @@ public class WidgetViewer : MonoBehaviour
     public Action endEvent {get; set;}
 
     private bool isOpen = false;
+    
+    public void ShowInvenstigate(params string[] texts){
+        selectTextUI = invenstigateObject;
+        textValues = texts;
+
+        OpenSetting();
+    }
 
     public void ShowMonologue(params string[] texts){
         selectTextUI = monolougeObject;
