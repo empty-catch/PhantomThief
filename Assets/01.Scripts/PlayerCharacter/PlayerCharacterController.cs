@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using Spine.Unity;
 
 public class PlayerCharacterController : MonoBehaviour
 {
@@ -13,35 +16,61 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField]
     private VoidEvent applyEvent;
 
+    private string currentAnimationName = "";
+
     private Ray mouseRay;
+    private SkeletonAnimation animationBone;
 
     private void Awake(){
         speed = defaultSpeed;
+        animationBone = gameObject.GetComponent<SkeletonAnimation>();
     }
 
     private void Update(){
+        MoveProcess();
+        InteractionProcess();
+    }
 
-        if(Input.anyKey){
-            if(Input.GetKey(KeyCode.A)){
-                Move(Vector2.left);
-            }
+    private void MoveProcess(){
+        switch(Input.anyKey){
+            case var k when Input.GetKey(KeyCode.A):
+            Move(Vector2.left);
+            SetDirection(Vector2.left);
+            SetAnimation("walk");
+            break;
 
-            if(Input.GetKey(KeyCode.D)){
-                Move(Vector2.right);
-            }
+            case var k when Input.GetKey(KeyCode.D):
+            Move(Vector2.right);
+            SetDirection(Vector2.right);
+            SetAnimation("walk");
+            break;
 
-            if(Input.GetKeyDown(KeyCode.E)){
-                Apply();
-            }
-
-            if(Input.GetKeyDown(KeyCode.W)){
-                Cancel();
-            }
-
-            if(Input.GetMouseButtonDown(0)){
-                Interaction();
-            }
+            default:
+            SetAnimation("idle");
+            break;
         }
+    }
+
+    private void InteractionProcess(){
+        switch(Input.anyKeyDown){
+            case var k when Input.GetKeyDown(KeyCode.E):
+            Apply();
+            break;
+
+            case var k when Input.GetKeyDown(KeyCode.W):
+            Cancel();
+            break;
+
+            case var k when Input.GetMouseButtonDown(0):
+            Interaction();
+            break;
+        }
+    }
+    
+    private void SetDirection(Vector2 direction){
+        direction.x *= -1;
+        direction.y = 1;
+        gameObject.transform.localScale = direction;
     }
     
     private void Move(Vector2 direction){
@@ -70,4 +99,13 @@ public class PlayerCharacterController : MonoBehaviour
         applyEvent.Invoke();
     }
     private void Cancel() { }
+
+    private void SetAnimation(string animationName){
+        if(animationName.Equals(currentAnimationName)){
+            return;
+        }
+
+        animationBone.state.SetAnimation(0, animationName, true);
+        currentAnimationName = animationName;
+    }
 }
