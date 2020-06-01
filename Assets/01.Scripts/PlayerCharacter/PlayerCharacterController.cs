@@ -19,6 +19,10 @@ public class PlayerCharacterController : MonoBehaviour
     private string currentAnimationName = "";
 
     private bool isInteraction = false;
+    public bool IsInteraction {
+        get{return isInteraction;} 
+        set{isInteraction = value;}
+    }
 
     private Ray mouseRay;
     private SkeletonAnimation animationBone;
