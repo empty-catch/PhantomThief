@@ -18,6 +18,8 @@ public class PlayerCharacterController : MonoBehaviour
 
     private string currentAnimationName = "";
 
+    private bool isInteraction = false;
+
     private Ray mouseRay;
     private SkeletonAnimation animationBone;
 
@@ -32,6 +34,9 @@ public class PlayerCharacterController : MonoBehaviour
     }
 
     private void MoveProcess(){
+        if(isInteraction)
+            return;
+
         switch(Input.anyKey){
             case var k when Input.GetKey(KeyCode.A):
             Move(Vector2.left);
@@ -73,13 +78,17 @@ public class PlayerCharacterController : MonoBehaviour
         gameObject.transform.localScale = direction;
     }
     
-    private void Move(Vector2 direction){
+    private void Move(Vector2 direction){       
         gameObject.transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    private void Interaction(){
+    private void Interaction(){                
+        if(isInteraction)
+            return;
+
         InteractionObject targetObject = GetAvailableInteractionObject();
-        targetObject?.Interaction();
+        targetObject?.Interaction(() => {isInteraction = false;});
+        isInteraction = true;
     }
 
     private InteractionObject GetAvailableInteractionObject() { 

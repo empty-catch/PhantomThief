@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InteractionObject : MonoBehaviour
 {
 
     [SerializeField]
     private InteractionScriptable information;
+
+    private Action endAction;
 
     private string[] monolougeTexts;
     private string[] systemTexts;
@@ -21,6 +24,11 @@ public class InteractionObject : MonoBehaviour
     public void Interaction() {
         StartCoroutine(InteractionCoroutine());
     }
+    
+    public void Interaction(Action endAction) {
+        StartCoroutine(InteractionCoroutine());
+        this.endAction = endAction;
+    }
 
     private IEnumerator InteractionCoroutine(){
         if(invenstigateTexts.Length > 0){
@@ -34,5 +42,8 @@ public class InteractionObject : MonoBehaviour
         if(systemTexts.Length > 0){
             yield return new WaitForTextEnd(2, systemTexts);
         }
+        
+        if(endAction != null)
+            endAction();
     }
 }
