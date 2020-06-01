@@ -15,6 +15,9 @@ public class WidgetViewer : MonoBehaviour
     [SerializeField]
     private TextViewUI invenstigateObject;
 
+    [SerializeField]
+    private TextViewUI npcDialogObject;
+
     private TextViewUI selectTextUI;
     private string[] textValues;
     private int index = 0;
@@ -46,6 +49,35 @@ public class WidgetViewer : MonoBehaviour
         OpenSetting();
     }
 
+    public void ShowNPCDialog(string[] texts, int[] index, params GameObject[] targetObjects){
+        selectTextUI = npcDialogObject;
+        textValues = texts;
+
+        Func<GameObject, Vector3> setDialog = (GameObject obj) => {
+            Vector3 position = obj.transform.position;
+            position.y += 3;
+
+            return position;
+        };
+
+        nextEvent = () => {
+            if(this.index >= index.Length){
+                return;
+            }
+
+            if(index[this.index].Equals(-1)){
+                selectTextUI.gameObject.transform.position = 
+                setDialog(targetObjects[targetObjects.Length - 1]);
+            } else{
+                selectTextUI.gameObject.transform.position = 
+                setDialog(targetObjects[this.index]);
+            }
+        };
+
+        nextEvent();
+        OpenSetting();
+    }
+
     private void OpenSetting(){
         selectTextUI.gameObject.SetActive(true);
         selectTextUI.ShowTexts(textValues[index++]);
@@ -67,7 +99,6 @@ public class WidgetViewer : MonoBehaviour
         }
 
         selectTextUI.ShowTexts(textValues[index++]);
-
 
     }
 
