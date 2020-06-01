@@ -20,6 +20,8 @@ public class WidgetViewer : MonoBehaviour
     private int index = 0;
 
     public Action endEvent {get; set;}
+    public Action nextEvent {get; set;} 
+    private object a;
 
     private bool isOpen = false;
     
@@ -55,6 +57,9 @@ public class WidgetViewer : MonoBehaviour
         if(!isOpen)
             return;
 
+        if(nextEvent != null){
+            nextEvent();
+        }
 
         if(index.Equals(textValues.Length)){
             CloseUIText();
