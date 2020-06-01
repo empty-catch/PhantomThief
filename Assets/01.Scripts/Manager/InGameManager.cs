@@ -9,6 +9,12 @@ public class InGameManager : MonoBehaviour
     [HideInInspector]
     public WidgetViewer widgetViewer;
 
+    [Header("Player Object")]
+    [SerializeField]
+    private PlayerCharacterController playerCharacter;
+
+    public PlayerCharacterController PlayerObject => playerCharacter;
+
     private void Awake(){
         if(instance is null)
             instance = this;
