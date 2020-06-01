@@ -88,7 +88,6 @@ public class PlayerCharacterController : MonoBehaviour
 
         InteractionObject targetObject = GetAvailableInteractionObject();
         targetObject?.Interaction(() => {isInteraction = false;});
-        isInteraction = true;
     }
 
     private InteractionObject GetAvailableInteractionObject() { 
@@ -98,6 +97,7 @@ public class PlayerCharacterController : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(mouseRay.origin, mouseRay.direction, out hit, Mathf.Infinity, LayerMask.GetMask("InteractionObject"))){
+            isInteraction = true;
             return hit.collider.gameObject.GetComponent<InteractionObject>();
         }
 
