@@ -55,8 +55,12 @@ public class WidgetViewer : MonoBehaviour
 
         Func<GameObject, Vector3> setDialog = (GameObject obj) => {
             Vector3 position = obj.transform.position;
-            position.y += 3;
-
+            
+            if(obj.Equals(targetObjects[targetObjects.Length - 1])){
+                position.y += 6;
+            } else{
+                position.y += 3;
+            }
             return position;
         };
 
