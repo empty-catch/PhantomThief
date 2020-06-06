@@ -57,10 +57,11 @@ public class WidgetViewer : MonoBehaviour
             Vector3 position = obj.transform.position;
             
             if(obj.Equals(targetObjects[targetObjects.Length - 1])){
-                position.y += 6;
+                position.y += 5;
             } else{
                 position.y += 3;
             }
+            position.x -= 4;
             return position;
         };
 
@@ -111,5 +112,6 @@ public class WidgetViewer : MonoBehaviour
         isOpen = false;
         index = 0;
         endEvent();
+        nextEvent = null;
     }
 }

@@ -113,7 +113,7 @@ public class PlayerCharacterController : MonoBehaviour
     }
     private void Cancel() { }
 
-    private void SetAnimation(string animationName){
+    public void SetAnimation(string animationName){
         if(animationName.Equals(currentAnimationName)){
             return;
         }
