@@ -98,9 +98,11 @@ public class PlayerCharacterController : MonoBehaviour
         mouseRay.direction = Vector3.forward;
         mouseRay.origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        RaycastHit hit;
+        RaycastHit2D hit;
 
-        if(Physics.Raycast(mouseRay.origin, mouseRay.direction, out hit, Mathf.Infinity, LayerMask.GetMask("InteractionObject"))){
+        hit = Physics2D.Raycast(mouseRay.origin, mouseRay.direction, Mathf.Infinity, LayerMask.GetMask("InteractionObject"));
+
+        if(hit.collider != null){
             isInteraction = true;
             return hit.collider.gameObject.GetComponent<InteractionObject>();
         }

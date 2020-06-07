@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a267050bd88c4d2f876f3edd9e4fb7c, type: 3}
-  m_Name: TestItem
+  m_Script: {fileID: 11500000, guid: 1dd6830bbdef9454c98552844d5473f4, type: 3}
+  m_Name: TestNPC
   m_EditorClassIdentifier: 
-  monolougeStrings:
-  - Test Text 00
-  - Test Text 01
-  systemStrings:
-  - Test Text 00
-  - Test Text 01
+  dialogs:
+  - dialog: Test
+    targetIndex: 0
+  - dialog: TestTest
+    targetIndex: 1
+  - dialog: TestTestTest
+    targetIndex: -1
