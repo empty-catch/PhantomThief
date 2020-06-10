@@ -3452,8 +3452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 420}
-  m_SizeDelta: {x: 428, y: 156}
+  m_AnchoredPosition: {x: 0, y: 420}
+  m_SizeDelta: {x: 448, y: 185}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1278317355
 MonoBehaviour:
@@ -3474,7 +3474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0043338b5faac4a768dbc4c3ad89f7ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfa6a4aa2fcba43ee8c7009f507b248e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4233,9 +4233,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 185}
-  m_SizeDelta: {x: 95, y: 60}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 222}
+  m_SizeDelta: {x: 103, y: 73}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1549155524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4257,7 +4257,7 @@ MonoBehaviour:
           m_MethodName: set_sprite
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 12a96d291b63c43b595207571846dd9c,
+            m_ObjectArgument: {fileID: 21300000, guid: 95d371c9709b0484bbde858d2cb8ed69,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
@@ -4284,7 +4284,7 @@ MonoBehaviour:
           m_MethodName: set_sprite
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 1778e897ba17e459da82ec7f11777c89,
+            m_ObjectArgument: {fileID: 21300000, guid: b58976c1649ac416a996ba0c1c1ffc2b,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
@@ -4400,7 +4400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1778e897ba17e459da82ec7f11777c89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b58976c1649ac416a996ba0c1c1ffc2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5186,9 +5186,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 260}
-  m_SizeDelta: {x: 95, y: 60}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 296}
+  m_SizeDelta: {x: 103, y: 73}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1921041851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5208,7 +5208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b8cd97f88065c4c189ca9fc12909635d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30def60d8d5b542f0a123768f80ad5b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5247,7 +5247,7 @@ MonoBehaviour:
           m_MethodName: set_sprite
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 001849f5b59674468a0279003a1a7fdf,
+            m_ObjectArgument: {fileID: 21300000, guid: 675bb98154863d04eaf3d853f7d1cef3,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
@@ -5274,7 +5274,7 @@ MonoBehaviour:
           m_MethodName: set_sprite
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: b8cd97f88065c4c189ca9fc12909635d,
+            m_ObjectArgument: {fileID: 21300000, guid: 30def60d8d5b542f0a123768f80ad5b7,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
