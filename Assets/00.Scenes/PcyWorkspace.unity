@@ -559,7 +559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -439.49988, y: -177}
+  m_AnchoredPosition: {x: -442, y: -186}
   m_SizeDelta: {x: 225, y: 276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &266846128
@@ -721,7 +721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 153}
+  m_AnchoredPosition: {x: -457, y: 144}
   m_SizeDelta: {x: 177, y: 59}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &370962335
@@ -844,7 +844,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -43, y: -12}
-  m_SizeDelta: {x: 174, y: 56}
+  m_SizeDelta: {x: 138, y: 78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419886521
 MonoBehaviour:
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2ed6db8a925384b1b883f8522f0c35c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7da84f04173fc48229d87fd2a6a7652e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1704,7 +1704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -439.49988, y: 155}
+  m_AnchoredPosition: {x: -442, y: 146}
   m_SizeDelta: {x: 225, y: 276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &569239226
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92766cd597ad24cd591de802bcc50096, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b59931af2d71a4e4db4411aa9b20c74f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1933,7 +1933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.49988, y: 155}
+  m_AnchoredPosition: {x: -196, y: 146}
   m_SizeDelta: {x: 225, y: 276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &705507993
@@ -2063,7 +2063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 34}
+  m_AnchoredPosition: {x: -457, y: 25}
   m_SizeDelta: {x: 177, y: 59}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &712758433
@@ -2126,7 +2126,7 @@ GameObject:
   - component: {fileID: 779206401}
   - component: {fileID: 779206402}
   m_Layer: 0
-  m_Name: Click Sound
+  m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2161,7 +2161,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7617a0e2667d4487f91f9f90aaf326d4, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3659,15 +3659,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34509805, g: 0.36862746, b: 0.5019608, a: 1}
+  m_Color: {r: 0.20392157, g: 0.14901961, b: 0.08235294, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a29f165dd3af944ce9f80f3122168043, type: 3}
-    m_FontSize: 42
+    m_Font: {fileID: 12800000, guid: 07752bfc3ef5f45a0bf36d68e0ab34ff, type: 3}
+    m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -4124,11 +4124,24 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 779206402}
-        m_MethodName: Play
-        m_Mode: 1
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: b83f02b6171124afa919d0fda02bc1ae,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 779206402}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 351702d2256e6485ab7ac9dc22e7c756,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4407,7 +4420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.49988, y: -177}
+  m_AnchoredPosition: {x: -195.99997, y: -185.99998}
   m_SizeDelta: {x: 225, y: 276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1700873044
@@ -4445,7 +4458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -439.49988, y: 155}
+  m_AnchoredPosition: {x: -442, y: 146}
   m_SizeDelta: {x: 225, y: 276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1722061045
@@ -4686,7 +4699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234, y: 153}
+  m_AnchoredPosition: {x: -242, y: 144}
   m_SizeDelta: {x: 177, y: 59}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1833458320
@@ -4773,7 +4786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234, y: 34}
+  m_AnchoredPosition: {x: -242.00006, y: 25.000015}
   m_SizeDelta: {x: 177, y: 59}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1863246066
@@ -5101,11 +5114,12 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 779206402}
-        m_MethodName: Play
-        m_Mode: 1
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: b83f02b6171124afa919d0fda02bc1ae,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

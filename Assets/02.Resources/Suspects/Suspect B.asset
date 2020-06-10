@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd504caf8611714a9a7eebad8e08bd3, type: 3}
   m_Name: Suspect B
   m_EditorClassIdentifier: 
+  picture: {fileID: 0}
   name: "\uC6A9\uC758\uC790 B"
   description: "\uC6A9\uC758\uC790 B\uC5D0 \uB300\uD55C \uC815\uBCF4"
-  where: "\uC218\uC7A5\uACE0"
-  what: "\uC8FC\uC778\uACF5\uC744"
-  how: "\uBC00\uC5C8\uB2E4"
-  why: "\uC9C8\uD22C\uC2EC\uC5D0"
+  where: "\uC0DD\uAC00"
+  what: "\uC720\uB839\uC758 \uBAB8"
+  how: "\uC870\uC0AC"
+  why: "\uC2B9\uCC9C \uBD88\uAC00"

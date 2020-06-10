@@ -26,9 +26,10 @@ public class ClueMatching : MonoBehaviour
                 break;
         }
 
-        if (clues[suspectIndex].IsMatching(suspect))
+        if (!clues[suspectIndex].AlreadyMatched && clues[suspectIndex].IsMatching(suspect))
         {
             Debug.Log($"Matched {suspectIndex}th Suspect");
+            clues[suspectIndex].AlreadyMatched = true;
             matched?.Invoke();
         }
     }
@@ -58,6 +59,8 @@ public class ClueMatching : MonoBehaviour
         public HashSet<string> What { get; } = new HashSet<string>();
         public HashSet<string> How { get; } = new HashSet<string>();
         public HashSet<string> Why { get; } = new HashSet<string>();
+
+        public bool AlreadyMatched { get; set; }
 
         public bool IsMatching(Suspect suspect)
         {

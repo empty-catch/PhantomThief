@@ -25,14 +25,15 @@ public class SuspectFile : MonoBehaviour
     [SerializeField]
     private RectTransform[] clueCardPlaces;
 
-    private int selectedSuspectIndex = 0;
-
     public void SelectSuspect(int index)
     {
+        foreach (var clueCard in clueCards)
+        {
+            clueCard.gameObject.SetActive(false);
+        }
+
         selectEffect.anchoredPosition = suspectsUI[index].anchoredPosition;
-        clueCards[selectedSuspectIndex].gameObject.SetActive(false);
         clueCards[index].gameObject.SetActive(true);
-        selectedSuspectIndex = index;
     }
 
     public void AddClueCard(string clue, int suspectIndex)
@@ -57,10 +58,10 @@ public class SuspectFile : MonoBehaviour
             description.text = suspects[i].Description;
         }
 
-        SelectSuspect(selectedSuspectIndex);
-        AddClueCard("어디서", 0);
-        AddClueCard("무엇을", 0);
-        AddClueCard("어떻게", 0);
-        AddClueCard("왜", 0);
+        AddClueCard("생가", 1);
+        AddClueCard("유령의 몸", 1);
+        AddClueCard("조사", 1);
+        AddClueCard("승천 불가", 1);
+        SelectSuspect(1);
     }
 }
