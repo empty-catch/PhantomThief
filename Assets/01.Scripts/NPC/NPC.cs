@@ -41,7 +41,6 @@ public class NPC : MonoBehaviour
         distance = Vector3.Distance(gameObject.transform.position, InGameManager.instance.PlayerObject.gameObject.transform.position);
         
         if(distance < 2.0f){
-            Debug.Log(1);
             ShowConversation();
             endDialogs = true;
         }

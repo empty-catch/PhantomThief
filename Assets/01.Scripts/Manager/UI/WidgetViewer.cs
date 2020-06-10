@@ -61,7 +61,7 @@ public class WidgetViewer : MonoBehaviour
             } else{
                 position.y += 3;
             }
-            position.x -= 4;
+            position.x += 2;
             return position;
         };
 
@@ -98,7 +98,7 @@ public class WidgetViewer : MonoBehaviour
             nextEvent();
         }
 
-        if(index.Equals(textValues.Length)){
+        if(index == textValues.Length){
             CloseUIText();
             return ;
         }
