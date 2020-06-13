@@ -9,12 +9,12 @@ public class PlayerCharacterController : MonoBehaviour
 {
     [Header("Values")]
     [SerializeField]
-    private float defaultSpeed;
+    private float defaultSpeed = 0;
     private float speed;
 
     [Header("Events")]
     [SerializeField]
-    private VoidEvent applyEvent;
+    private VoidEvent applyEvent = null;
 
     private string currentAnimationName = "";
 

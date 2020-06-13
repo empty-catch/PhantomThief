@@ -6,7 +6,7 @@ public class CursorController : MonoBehaviour
 {
     [Header("Cursor Texture")]
     [SerializeField]
-    private Texture2D[] cursorSprites;
+    private Texture2D[] cursorSprites = null;
     private Ray mouseRay;
     
     private void Awake(){

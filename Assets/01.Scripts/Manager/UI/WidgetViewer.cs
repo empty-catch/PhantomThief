@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Net.Cache;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,19 +7,23 @@ using System;
 
 public class WidgetViewer : MonoBehaviour
 {
+    [Header("Objects")]
     [SerializeField]
-    private TextViewUI monolougeObject;
+    private TextViewUI monolougeObject = null;
     
     [SerializeField]
-    private TextViewUI systemTextObject;
+    private TextViewUI systemTextObject = null;
 
     [SerializeField]
-    private TextViewUI invenstigateObject;
+    private TextViewUI invenstigateObject = null;
 
     [SerializeField]
-    private TextViewUI npcDialogObject;
+    private TextViewUI npcDialogObject = null;
 
-    private TextViewUI selectTextUI;
+    [SerializeField]
+    private Image eventImage = null;
+
+    private TextViewUI selectTextUI = null;
     private string[] textValues;
     private int index = 0;
 
@@ -49,6 +54,14 @@ public class WidgetViewer : MonoBehaviour
         OpenSetting();
     }
 
+    public void ShowEventImage(Sprite sprite){
+        isOpen = true;
+        eventImage.sprite = sprite;
+        eventImage.gameObject.SetActive(true);
+        nextEvent = () => {eventImage.gameObject.SetActive(false);};
+        textValues = null;
+    }
+
     public void ShowNPCDialog(string[] texts, int[] index, params GameObject[] targetObjects){
         selectTextUI = npcDialogObject;
         textValues = texts;
@@ -61,7 +74,7 @@ public class WidgetViewer : MonoBehaviour
             } else{
                 position.y += 3;
             }
-            position.x -= 4;
+            position.x += 2;
             return position;
         };
 
@@ -75,7 +88,7 @@ public class WidgetViewer : MonoBehaviour
                 setDialog(targetObjects[targetObjects.Length - 1]);
             } else{
                 selectTextUI.gameObject.transform.position = 
-                setDialog(targetObjects[this.index]);
+                setDialog(targetObjects[index[this.index]]);
             }
         };
 
@@ -85,7 +98,7 @@ public class WidgetViewer : MonoBehaviour
 
     private void OpenSetting(){
         selectTextUI.gameObject.SetActive(true);
-        selectTextUI.ShowTexts(textValues[index++]);
+        selectTextUI.ShowTexts(textValues[index]);
         isOpen = true;
     }
 
@@ -93,22 +106,24 @@ public class WidgetViewer : MonoBehaviour
     public void NextText(){
         if(!isOpen)
             return;
+            
+        index++;
 
         if(nextEvent != null){
             nextEvent();
         }
 
-        if(index.Equals(textValues.Length)){
+        if(textValues is null || index == textValues.Length){
             CloseUIText();
             return ;
         }
 
-        selectTextUI.ShowTexts(textValues[index++]);
+        selectTextUI?.ShowTexts(textValues[index]);
 
     }
 
     private void CloseUIText(){
-        selectTextUI.gameObject.SetActive(false);
+        selectTextUI?.gameObject.SetActive(false);
         isOpen = false;
         index = 0;
         endEvent();

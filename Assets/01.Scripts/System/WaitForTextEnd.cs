@@ -30,4 +30,9 @@ public class WaitForTextEnd : CustomYieldInstruction
             InGameManager.instance.widgetViewer.ShowSystemText(textValues);
         }
     }
+
+    public WaitForTextEnd(Sprite sprite){
+        InGameManager.instance.widgetViewer.endEvent = () => {isEnd = false;};
+        InGameManager.instance.widgetViewer.ShowEventImage(sprite);
+    }
 }

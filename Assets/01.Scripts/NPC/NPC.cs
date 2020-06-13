@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
 
     [Header("Information")]
     [SerializeField]
-    private NPCScriptable information;
+    private NPCScriptable information = null;
 
     private string[] dialogs;
     private int[] index;
@@ -41,7 +41,6 @@ public class NPC : MonoBehaviour
         distance = Vector3.Distance(gameObject.transform.position, InGameManager.instance.PlayerObject.gameObject.transform.position);
         
         if(distance < 2.0f){
-            Debug.Log(1);
             ShowConversation();
             endDialogs = true;
         }
