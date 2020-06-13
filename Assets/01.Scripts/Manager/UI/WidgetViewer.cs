@@ -56,8 +56,12 @@ public class WidgetViewer : MonoBehaviour
 
     public void ShowEventImage(Sprite sprite){
         isOpen = true;
-        eventImage.sprite = sprite;
-        eventImage.gameObject.SetActive(true);
+        
+        if(sprite != null){
+            eventImage.sprite = sprite;
+            eventImage.gameObject.SetActive(true);
+        }
+        
         nextEvent = () => {eventImage.gameObject.SetActive(false);};
         textValues = null;
     }
@@ -72,7 +76,7 @@ public class WidgetViewer : MonoBehaviour
             if(obj.Equals(targetObjects[targetObjects.Length - 1])){
                 position.y += 5;
             } else{
-                position.y += 3;
+                position.y += 1;
             }
             position.x += 2;
             return position;
