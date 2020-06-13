@@ -32,6 +32,7 @@ public class SuspectFile : MonoBehaviour
             clueCard.gameObject.SetActive(false);
         }
 
+        matchingSuspect.text = $"{suspects[index].Name}의 단서";
         selectEffect.anchoredPosition = suspectsUI[index].anchoredPosition;
         clueCards[index].gameObject.SetActive(true);
     }

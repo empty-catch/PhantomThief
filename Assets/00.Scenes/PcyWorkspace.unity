@@ -1871,7 +1871,7 @@ MonoBehaviour:
   - {fileID: 242092227}
   - {fileID: 1685963666}
   clueMatching: {fileID: 941967720}
-  matchingSuspect: {fileID: 0}
+  matchingSuspect: {fileID: 1408349647}
   clueCardPrefab: {fileID: 2424089233265120966, guid: e80592581dd17c749954e81c1d03ae94,
     type: 3}
   clueCards:
