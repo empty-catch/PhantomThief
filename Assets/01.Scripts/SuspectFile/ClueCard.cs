@@ -53,6 +53,11 @@ public class ClueCard : MonoBehaviour
             cancelMatch?.Invoke(placeName);
             match?.Invoke(ClueCardPlace.Name);
             placeName = ClueCardPlace.Name;
+
+            if (placeName != "Clue Card Place")
+            {
+                transform.DOMove(ClueCardPlace.Position.Value, 0.1F);
+            }
         }
         else
         {

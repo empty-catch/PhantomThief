@@ -5,16 +5,19 @@ public class ClueCardPlace : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     public static bool IsMouseOver { get; private set; }
     public static string Name { get; private set; }
+    public static Vector2? Position { get; private set; }
 
     public void OnPointerEnter(PointerEventData pointer)
     {
         IsMouseOver = true;
         Name = pointer.pointerEnter.name;
+        Position = pointer.pointerEnter.transform.position;
     }
 
     public void OnPointerExit(PointerEventData _)
     {
         IsMouseOver = false;
-        Name = string.Empty;
+        Name = null;
+        Position = null;
     }
 }
