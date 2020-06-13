@@ -75,7 +75,7 @@ public class WidgetViewer : MonoBehaviour
                 setDialog(targetObjects[targetObjects.Length - 1]);
             } else{
                 selectTextUI.gameObject.transform.position = 
-                setDialog(targetObjects[this.index]);
+                setDialog(targetObjects[index[this.index]]);
             }
         };
 
@@ -85,7 +85,7 @@ public class WidgetViewer : MonoBehaviour
 
     private void OpenSetting(){
         selectTextUI.gameObject.SetActive(true);
-        selectTextUI.ShowTexts(textValues[index++]);
+        selectTextUI.ShowTexts(textValues[index]);
         isOpen = true;
     }
 
@@ -93,6 +93,8 @@ public class WidgetViewer : MonoBehaviour
     public void NextText(){
         if(!isOpen)
             return;
+            
+        index++;
 
         if(nextEvent != null){
             nextEvent();
@@ -103,7 +105,7 @@ public class WidgetViewer : MonoBehaviour
             return ;
         }
 
-        selectTextUI.ShowTexts(textValues[index++]);
+        selectTextUI.ShowTexts(textValues[index]);
 
     }
 
