@@ -571,6 +571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 266846129}
+  - component: {fileID: 266846130}
   m_Layer: 0
   m_Name: Inventory UI
   m_TagString: Untagged
@@ -594,6 +595,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266846130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266846128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3919f4614994148adb43c8ebe065dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyDownTriggers:
+  - keyCode: 27
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 266846128}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  keyHoldTriggers: []
+  keyUpTriggers: []
 --- !u!1 &358064004
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358064005}
+  - component: {fileID: 358064006}
   m_Layer: 0
   m_Name: Suspect File UI
   m_TagString: Untagged
@@ -626,6 +658,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358064006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358064004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3919f4614994148adb43c8ebe065dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyDownTriggers:
+  - keyCode: 27
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 358064004}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  keyHoldTriggers: []
+  keyUpTriggers: []
 --- !u!1 &368157093
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 #pragma warning disable CS0649
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
