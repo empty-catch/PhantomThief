@@ -27,6 +27,13 @@ public class WidgetViewer : MonoBehaviour
     private string[] textValues;
     private int index = 0;
 
+    [Header("Values")]
+    [SerializeField]
+    private float playerDialogX;
+
+    [SerializeField]
+    private float playerDialogY;
+
     public Action endEvent {get; set;}
     public Action nextEvent {get; set;} 
     private object a;
@@ -74,11 +81,13 @@ public class WidgetViewer : MonoBehaviour
             Vector3 position = obj.transform.position;
             
             if(obj.Equals(targetObjects[targetObjects.Length - 1])){
-                position.y += 5;
+                position.x += playerDialogX;
+                position.y += playerDialogY;
             } else{
+                position.x += 3;
                 position.y += 1;
             }
-            position.x += 3;
+
             return position;
         };
 

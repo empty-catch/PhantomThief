@@ -63,7 +63,5 @@ public class InteractionObject : MonoBehaviour
         if(item != null){
             itemEvent?.Invoke(item);
         }
-
-        gameObject.SetActive(false);
     }
 }
