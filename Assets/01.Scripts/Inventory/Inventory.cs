@@ -27,6 +27,8 @@ public class Inventory : MonoBehaviour
         var item = Item.NewItem(itemPrefab, itemSlot, SelectItem, itemCount, name);
         items[itemCount] = item;
         itemCount++;
+
+        SelectItem(itemCount - 1);
     }
 
     private void SelectItem(int index)
@@ -39,10 +41,5 @@ public class Inventory : MonoBehaviour
                 itemName.text = items[i].Name;
             }
         }
-    }
-
-    private void Awake()
-    {
-        SelectItem(0);
     }
 }
