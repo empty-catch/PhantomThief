@@ -3338,8 +3338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.1, y: 98.6}
-  m_SizeDelta: {x: 795.79987, y: 287.1326}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 577.2436, y: 208.2753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &836016420
 MonoBehaviour:
@@ -5859,8 +5859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 866.8911, y: 348.17548}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 628.81055, y: 252.55353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710935624
 MonoBehaviour:
@@ -6482,7 +6482,7 @@ MonoBehaviour:
   systemTextObject: {fileID: 2107201820}
   invenstigateObject: {fileID: 649689353}
   npcDialogObject: {fileID: 401831369}
-  eventImage: {fileID: 0}
+  eventImage: {fileID: 1936357750}
 --- !u!114 &1756945568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6764,12 +6764,12 @@ GameObject:
   - component: {fileID: 1936357751}
   - component: {fileID: 1936357750}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1936357749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7306,7 +7306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2107201819
 RectTransform:
   m_ObjectHideFlags: 0

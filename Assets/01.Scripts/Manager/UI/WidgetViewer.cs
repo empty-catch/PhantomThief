@@ -78,7 +78,7 @@ public class WidgetViewer : MonoBehaviour
             } else{
                 position.y += 1;
             }
-            position.x += 2;
+            position.x += 3;
             return position;
         };
 
