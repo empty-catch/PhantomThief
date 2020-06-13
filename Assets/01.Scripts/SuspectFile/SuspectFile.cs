@@ -22,8 +22,6 @@ public class SuspectFile : MonoBehaviour
     private ClueCard clueCardPrefab;
     [SerializeField]
     private RectTransform[] clueCards = new RectTransform[4];
-    [SerializeField]
-    private RectTransform[] clueCardPlaces;
 
     public void SelectSuspect(int index)
     {

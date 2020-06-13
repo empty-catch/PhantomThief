@@ -49,14 +49,18 @@ public class ClueCard : MonoBehaviour
 
         if (ClueCardPlace.IsMouseOver)
         {
-            position = rectTransform.anchoredPosition;
             cancelMatch?.Invoke(placeName);
             match?.Invoke(ClueCardPlace.Name);
             placeName = ClueCardPlace.Name;
 
-            if (placeName != "Clue Card Place")
+            if (placeName == "Clue Card Place")
             {
-                transform.DOMove(ClueCardPlace.Position.Value, 0.1F);
+                position = rectTransform.anchoredPosition;
+            }
+            else
+            {
+                position = ClueCardPlace.Position.Value;
+                tweener = rectTransform.DOAnchorPos(position, 0.1F);
             }
         }
         else

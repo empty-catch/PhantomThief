@@ -17,6 +17,16 @@ public class Item : MonoBehaviour, IPointerDownHandler
     [SerializeField]
     private Sprite inactive;
 
+    public string Name { get; private set; }
+
+    public static Item NewItem(Item prefab, RectTransform slot, Action<int> selectItem, int index, string name)
+    {
+        var item = Instantiate(prefab, slot);
+        item.Select += () => selectItem?.Invoke(index);
+        item.Name = name;
+        return item;
+    }
+
     public void SetActive(bool value)
     {
         image.sprite = value ? active : inactive;

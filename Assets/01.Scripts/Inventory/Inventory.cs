@@ -1,5 +1,6 @@
 #pragma warning disable CS0649
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -7,20 +8,23 @@ public class Inventory : MonoBehaviour
     private Item itemPrefab;
     [SerializeField]
     private RectTransform itemSlot;
+    [SerializeField]
+    private Text itemName;
+    [SerializeField]
+    private GameObject explanation;
 
     private Item[] items = new Item[20];
     private int itemCount;
 
-    public void AddItem()
+    public void AddItem(string name)
     {
         if (itemCount >= 20)
         {
             return;
         }
 
-        var item = Instantiate(itemPrefab, itemSlot);
-        int index = itemCount;
-        item.Select += () => SelectItem(index);
+        explanation.SetActive(true);
+        var item = Item.NewItem(itemPrefab, itemSlot, SelectItem, itemCount, name);
         items[itemCount] = item;
         itemCount++;
     }
@@ -30,13 +34,15 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < itemCount; i++)
         {
             items[i].SetActive(i == index);
+            if (i == index)
+            {
+                itemName.text = items[i].Name;
+            }
         }
     }
 
     private void Awake()
     {
-        AddItem();
-        AddItem();
         SelectItem(0);
     }
 }

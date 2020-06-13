@@ -11,7 +11,7 @@ public class ClueCardPlace : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         IsMouseOver = true;
         Name = pointer.pointerEnter.name;
-        Position = pointer.pointerEnter.transform.position;
+        Position = (pointer.pointerEnter.transform as RectTransform).anchoredPosition;
     }
 
     public void OnPointerExit(PointerEventData _)
