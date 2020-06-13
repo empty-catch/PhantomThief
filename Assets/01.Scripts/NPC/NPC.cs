@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
 
     [Header("Information")]
     [SerializeField]
-    private NPCScriptable information;
+    private NPCScriptable information = null;
 
     private string[] dialogs;
     private int[] index;

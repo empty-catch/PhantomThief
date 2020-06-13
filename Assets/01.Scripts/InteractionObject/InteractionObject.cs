@@ -7,7 +7,7 @@ public class InteractionObject : MonoBehaviour
 {
 
     [SerializeField]
-    private InteractionScriptable information;
+    private InteractionScriptable information = null;
 
     private Action endAction;
 
@@ -52,5 +52,7 @@ public class InteractionObject : MonoBehaviour
         
         if(endAction != null)
             endAction();
+
+        gameObject.SetActive(false);
     }
 }

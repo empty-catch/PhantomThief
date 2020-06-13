@@ -11,7 +11,7 @@ public class InGameManager : MonoBehaviour
 
     [Header("Player Object")]
     [SerializeField]
-    private PlayerCharacterController playerCharacter;
+    private PlayerCharacterController playerCharacter = null;
 
     public PlayerCharacterController PlayerObject => playerCharacter;
 

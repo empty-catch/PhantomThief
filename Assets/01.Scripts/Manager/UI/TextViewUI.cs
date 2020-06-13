@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class TextViewUI : MonoBehaviour
 {
     [SerializeField]
-    private Text textUI;
+    private Text textUI = null;
         
     public void ShowTexts(string value){
         textUI.text = "";

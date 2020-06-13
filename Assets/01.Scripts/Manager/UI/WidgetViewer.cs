@@ -9,21 +9,21 @@ public class WidgetViewer : MonoBehaviour
 {
     [Header("Objects")]
     [SerializeField]
-    private TextViewUI monolougeObject;
+    private TextViewUI monolougeObject = null;
     
     [SerializeField]
-    private TextViewUI systemTextObject;
+    private TextViewUI systemTextObject = null;
 
     [SerializeField]
-    private TextViewUI invenstigateObject;
+    private TextViewUI invenstigateObject = null;
 
     [SerializeField]
-    private TextViewUI npcDialogObject;
+    private TextViewUI npcDialogObject = null;
 
     [SerializeField]
-    private Image eventImage;
+    private Image eventImage = null;
 
-    private TextViewUI selectTextUI;
+    private TextViewUI selectTextUI = null;
     private string[] textValues;
     private int index = 0;
 
