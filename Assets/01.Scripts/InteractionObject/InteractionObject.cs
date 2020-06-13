@@ -14,8 +14,11 @@ public class InteractionObject : MonoBehaviour
     private string[] monolougeTexts;
     private string[] systemTexts;
     private string[] invenstigateTexts;
-
+    
+    private Sprite eventSprite;
+    
     private void Awake() {
+        eventSprite = information.eventSprite;
         monolougeTexts = information.monolougeStrings;
         systemTexts = information.systemStrings;
         invenstigateTexts = information.invenstigateStrings;    
@@ -31,6 +34,10 @@ public class InteractionObject : MonoBehaviour
     }
 
     private IEnumerator InteractionCoroutine(){
+        if(eventSprite != null){
+            yield return new WaitForTextEnd(eventSprite);
+        }
+
         if(invenstigateTexts.Length > 0){
             yield return new WaitForTextEnd(0, invenstigateTexts);
         }

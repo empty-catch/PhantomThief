@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Net.Cache;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using System;
 
 public class WidgetViewer : MonoBehaviour
 {
+    [Header("Objects")]
     [SerializeField]
     private TextViewUI monolougeObject;
     
@@ -17,6 +19,9 @@ public class WidgetViewer : MonoBehaviour
 
     [SerializeField]
     private TextViewUI npcDialogObject;
+
+    [SerializeField]
+    private Image eventImage;
 
     private TextViewUI selectTextUI;
     private string[] textValues;
@@ -47,6 +52,14 @@ public class WidgetViewer : MonoBehaviour
         textValues = texts;
 
         OpenSetting();
+    }
+
+    public void ShowEventImage(Sprite sprite){
+        isOpen = true;
+        eventImage.sprite = sprite;
+        eventImage.gameObject.SetActive(true);
+        nextEvent = () => {eventImage.gameObject.SetActive(false);};
+        textValues = null;
     }
 
     public void ShowNPCDialog(string[] texts, int[] index, params GameObject[] targetObjects){
@@ -100,17 +113,17 @@ public class WidgetViewer : MonoBehaviour
             nextEvent();
         }
 
-        if(index == textValues.Length){
+        if(textValues is null || index == textValues.Length){
             CloseUIText();
             return ;
         }
 
-        selectTextUI.ShowTexts(textValues[index]);
+        selectTextUI?.ShowTexts(textValues[index]);
 
     }
 
     private void CloseUIText(){
-        selectTextUI.gameObject.SetActive(false);
+        selectTextUI?.gameObject.SetActive(false);
         isOpen = false;
         index = 0;
         endEvent();
