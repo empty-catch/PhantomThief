@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7c08214d5564f98aa57c8756d8125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  information: {fileID: 11400000, guid: f004d437da9044befa37d0efd0ebac24, type: 2}
+  information: {fileID: 11400000, guid: 6e8eb2b59219b47cb98d2aa01356f5e4, type: 2}
 --- !u!212 &396969923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5314,12 +5314,6 @@ MonoBehaviour:
   - {fileID: 627299664}
   - {fileID: 945978044}
   - {fileID: 2131596421}
-  clueCardPlaces:
-  - {fileID: 1948703444}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 798534909}
 --- !u!114 &1344088215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5864,6 +5858,8 @@ MonoBehaviour:
   itemPrefab: {fileID: 1928888307489912427, guid: b004926d0377f7540a6dd7edfdc4e7bf,
     type: 3}
   itemSlot: {fileID: 2144876243}
+  itemName: {fileID: 0}
+  explanation: {fileID: 0}
 --- !u!1 &1660021877
 GameObject:
   m_ObjectHideFlags: 0

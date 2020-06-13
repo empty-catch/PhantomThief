@@ -6,4 +6,6 @@ public class InteractionScriptable : ScriptableObject {
     public string[] invenstigateStrings;
     public string[] monolougeStrings;
     public string[] systemStrings;
+
+    public string item;
 }

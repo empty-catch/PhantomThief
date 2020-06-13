@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -9,16 +10,22 @@ public class InteractionObject : MonoBehaviour
     [SerializeField]
     private InteractionScriptable information = null;
 
+    [SerializeField]
+    private StringEvent itemEvent = null;
+
     private Action endAction;
 
     private string[] monolougeTexts;
     private string[] systemTexts;
     private string[] invenstigateTexts;
-    
+
+    private string item = null;
+
     private Sprite eventSprite;
     
     private void Awake() {
         eventSprite = information.eventSprite;
+        item = information.item;
         monolougeTexts = information.monolougeStrings;
         systemTexts = information.systemStrings;
         invenstigateTexts = information.invenstigateStrings;    
@@ -52,6 +59,10 @@ public class InteractionObject : MonoBehaviour
         
         if(endAction != null)
             endAction();
+
+        if(item != null){
+            itemEvent?.Invoke(item);
+        }
 
         gameObject.SetActive(false);
     }
